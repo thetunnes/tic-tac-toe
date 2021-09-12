@@ -51,14 +51,14 @@ import './index.css'
     
     constructor(props) {
         super(props);
-        this.state = ({
+        this.state = {
 
             history : [{
                 squares : Array(9).fill(null)
             }],
-
+            stepNumber: 0,
             XisNext : true
-        })
+        }
     }
 
     handleClick(i) {
@@ -92,6 +92,7 @@ import './index.css'
 
         const winner = calculateWinner(current.squares);
 
+
         const moves = history.map((step,move) => {
             const desc = move ?
             'Go to move #' + move :
@@ -109,7 +110,7 @@ import './index.css'
 
         if(winner) {
             status = 'Winner: ' + winner;
-            alert(`Winner: ${winner}`);
+            alert(`Player ${winner} won!`);
         }else {
             status = 'Next player: ' + (this.state.XisNext ? 'X' : 'O');
         }
