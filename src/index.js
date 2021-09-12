@@ -91,6 +91,7 @@ import './index.css'
         const current = history[this.state.stepNumber];
 
         const winner = calculateWinner(current.squares);
+        let whoWinner = ''
 
 
         const moves = history.map((step,move) => {
@@ -111,10 +112,12 @@ import './index.css'
         if(winner) {
             status = 'Winner: ' + winner;
             alert(`Player ${winner} won!`);
+            whoWinner = `Jogador ${winner} você ganhou!`
         }else {
             status = 'Next player: ' + (this.state.XisNext ? 'X' : 'O');
         }
       return (
+        <div className="game-master">
         <div className="game">
           <div className="game-board">
             <Board squares={current.squares} onClick={(i) => this.handleClick(i)}/>
@@ -123,6 +126,8 @@ import './index.css'
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
+        </div>
+        <div className="winner">{whoWinner}</div>
         </div>
       );
     }

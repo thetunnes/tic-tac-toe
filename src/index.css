@@ -51,4 +51,26 @@ body {
   .game-info {
     margin-left: 20px;
   }
+
+  .game-master {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .winner {
+
+    margin: 8px 0;
+
+
+    color: green;
+  }
+
+  .winner:hover {
+
+    color: black;
+    cursor: default;
+  }
   
